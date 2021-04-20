@@ -1,0 +1,36 @@
+#register {
+  width: 480px;
+  height: 520px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #cc00ff;
+  margin: 200px auto;
+}
+#register .header {
+  width: 100px;
+  height: 140px;
+  margin: 0 auto;
+}
+#register .header img {
+  width: 100%;
+  border-radius: 50%;
+}
+#register .header p {
+  line-height: 40px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+#register .error {
+  background-color: red;
+  text-align: center;
+}
+#register form {
+  font-size: 20px;
+  margin-top: 10px;
+}
+#register p {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=./reg.css.map */

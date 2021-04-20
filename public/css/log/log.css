@@ -1,0 +1,36 @@
+#login {
+  width: 480px;
+  height: 420px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #00e1ff;
+  margin: 200px auto;
+}
+#login .header {
+  width: 100px;
+  height: 140px;
+  margin: 0 auto;
+}
+#login .header img {
+  width: 100%;
+  border-radius: 50%;
+}
+#login .header p {
+  line-height: 40px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+#login .error {
+  background-color: red;
+  text-align: center;
+}
+#login form {
+  font-size: 20px;
+  margin-top: 10px;
+}
+#login p {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=./log.css.map */
