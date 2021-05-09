@@ -64,8 +64,6 @@ router.post('/reg',(req,res) => {
             req.session.user = user
             res.redirect('/home')
         })
-        
-        
     })
 })
 //退出登录处理
