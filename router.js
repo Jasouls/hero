@@ -79,13 +79,19 @@ router.get('/logout',(req,res) => {
 //登录后主页面渲染
 router.get('/home',(req,res) => {
     Hero.find(function(error,data){
-        if(error){
-            return res.status(500).send("Server Error")
+        if(req.session.user === null){
+            return res.render('log.html',{
+                errMes:'请登录后查看！'
+            })
+        }else{
+            if(error){
+                return res.status(500).send("Server Error")
+            }
+            res.render('home.html',{
+                user:req.session.user,
+                herolist:data
+            })
         }
-        res.render('home.html',{
-            user:req.session.user,
-            herolist:data
-        })
     })
     
 })
