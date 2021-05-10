@@ -5,7 +5,10 @@ const session = require('express-session')
 
 const router = require('./router')
 
-// 开放文件访问权限,通过指定标识访问目标路径
+// 导入mongo连接，持久化session
+let MongoStore = require('connect-mongo')(session)
+
+// 开放文件访let问权限,通过指定标识访问目标路径
 app.use('/node_modules/',express.static(path.join(__dirname,'./node_modules')))
 app.use('/public/',express.static(path.join(__dirname,'./public')))
 
@@ -20,8 +23,12 @@ app.use(express.json())
 // 配置session
 app.use(session({
     secret:'keyboard cat',
+    cookie:{maxAge:1000 * 60 * 60},
     resave:false,
-    saveUninitialized:true
+    saveUninitialized:true,
+    store:new MongoStore({
+        url:'mongodb://localhost:27017/hero'
+    })
 }))
 
 // 挂载路由
